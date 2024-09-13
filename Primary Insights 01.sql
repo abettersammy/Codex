@@ -10,12 +10,12 @@ WHERE Consume_frequency = 'Rarely'
 ;
 
 SELECT 
-	r.gender,
+    D.gender,
     COUNT(*) AS total_responses
-FROM dim_repondents AS r
-JOIN fact_survey_responses AS s 
-ON r.Respondent_ID = s.Response_ID
-WHERE s.Heard_before = 'Yes'
+FROM dim_repondents AS D
+JOIN fact_survey_responses AS F
+ON D.Respondent_ID = F.Response_ID
+WHERE F.Heard_before = 'Yes'
 GROUP BY r.gender;
 
 -- DEMOGRAPHIC INSIGHTS 
